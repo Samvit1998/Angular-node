@@ -1,0 +1,22 @@
+{
+  "name": "angular_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "dev": "nodemon ./main.js localhost 3080",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samvit",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "firebase": "^7.18.0",
+    "firebase-admin": "^9.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

@@ -1,0 +1,44 @@
+<h4>Search for Recipes:</h4><input type="text" id="myInput" (keyup)="myFunction()" placeholder="Search for names.." title="Type in a name"><br><br>
+<div class="formGroup"> <button type="button" class="btn btn-danger" (click)="auth.signOut()"> Logout </button> </div>
+<br><br><a href="user" class="btn btn-primary"> Check all Recipes</a>
+
+
+
+<div class="example-form">
+    <h3>Add a Recipe:</h3> <br>
+    <h4>Name:</h4>
+    <input type="text" placeholder="Recipe name" #recipename><br>
+    <h4>Image:</h4>
+    <input type="text" placeholder="Recipe image" #recipeimage><br>
+    
+    <h4>Ingredients:</h4>
+    <table>
+        <thead>
+            <th>Ingredients</th>
+            <td>Quantity</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" placeholder="Recipe ingredient" name="ingredient" #ingredient1></td>
+                <td><input type="number" placeholder="Quantity" name="quantity" #quantity1></td>
+                <td><button (click)='addIngredient(ingredient1.value,quantity1.value)'>Add</button></td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="Recipe ingredient" name="ingredient" #ingredient2></td>
+                <td><input type="number" placeholder="Quantity" name="quantity" #quantity2></td>
+                <td><button (click)='addIngredient(ingredient2.value,quantity2.value)'>Add</button></td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="Recipe ingredient" name="ingredient" #ingredient3></td>
+                <td><input type="number" placeholder="Quantity" name="quantity" #quantity3></td>
+                <td><button (click)='addIngredient(ingredient3.value,quantity3.value)'>Add</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <h4>Description:</h4>
+    <input type="text" placeholder="Recipe Description" #recipedescription><br><br>
+    <button class="btn btn-primary" (click)='addRecipe(recipename.value,recipeimage.value,recipedescription.value)'>Add a Recipe</button>
+</div>
+

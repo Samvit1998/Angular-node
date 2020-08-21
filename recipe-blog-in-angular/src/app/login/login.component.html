@@ -1,0 +1,27 @@
+<form [formGroup]='loginForm' class="example-form">
+    <!-- <div class="form-entity">
+        <label for="registerLabel"><h1>Login</h1></label>
+    </div>
+    <div class="form-entity">
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" #email placeholder="Ex. pat@example.com">
+            <mat-error>
+                Please enter a valid email address
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div class="form-entity">
+        <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" #password type="password">
+            <mat-error>
+                Please enter a valid password.
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <button [disabled]='loginForm.invalid' mat-raised-button color="warn" (click)="onLogin()">Login</button> -->
+
+    <!-- Calling GoogleAuth() Api from AuthService -->
+    <div class="formGroup"> <button type="button" class="btn btn-warning" (click)="authService.GoogleAuth()"> Log in with Google </button> </div>
+</form>

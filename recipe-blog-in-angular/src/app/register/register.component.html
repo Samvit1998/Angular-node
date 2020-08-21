@@ -1,0 +1,38 @@
+<form [formGroup]='registerForm' class="example-form">
+    <div class="form-entity">
+        <label for="registerLabel"><h1>Register</h1></label>
+    </div>
+    <div class="form-entity">
+        <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input [class.is-invalid]="registerForm.errors?.emailDomain" matInput formControlName="email" placeholder="Ex. pat@example.com">
+            <mat-error>
+                Email must be on the quantiphi domain
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div class="form-entity">
+        <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" #password type="password">
+            <mat-error>
+                Please enter a valid password.
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div class="form-entity">
+        <mat-form-field class="example-full-width">
+            <mat-label> Confirm Password</mat-label>
+            <input [class.is-invalid]="registerForm.errors?.misMatch" matInput formControlName="confirmPass" #confirmPass type="password"><br><br>
+            <small class="text-danger" *ngIf="registerForm.errors?.misMatch">Passwords Do Not Match</small>
+
+            <mat-error>
+                Please enter a valid password.
+            </mat-error>
+
+        </mat-form-field>
+    </div>
+    <button [disabled]='registerForm.invalid' mat-raised-button color="warn" (click)="onSubmit()">Submit</button>
+
+
+</form>

@@ -1,0 +1,73 @@
+<a class="btn btn-primary" href="cook"> Add a new Recipe</a>
+<div class="formGroup"> <button type="button" class="btn btn-danger" (click)="auth.signOut()"> Logout </button> </div>
+<h4>
+    Search for Recipes:</h4><input type="text" id="myInput" (keyup)="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+
+<table class='table' id="myTable">
+    <thead>
+        <th>Index</th>
+        <th>Recipe</th>
+        <th>Image</th>
+        <th>Ingredients</th>
+        <th>Description</th>
+
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let recipe of recipies; let recipeId= index ">
+            <td>{{recipeId+1}}</td>
+            <td>{{recipe.name}}</td>
+            <td><img src="{{recipe.image}}"></td>
+
+            <td>
+                <div *ngFor="let ingredients of recipe.ingredients">
+                    <p>Ingredients: {{ingredients.name}}</p>
+                    <p>Quantity:{{ingredients.quantity}}</p>
+                </div>
+
+            </td>
+            <td></td><br>
+            <td><button class="btn btn-primary" (click)='LikeRecipe(recipeId)'>Like</button></td>
+            <td><button class="btn btn-primary" (click)='BookmarkRecipe(recipeId)'>Bookmark</button></td>
+        </tr>
+    </tbody>
+
+
+
+</table>
+<br><br>
+<h2><strong>Recipes you have bookmarked:</strong> </h2>
+<br>
+<div class="container">
+    <div class="row">
+      
+        <div *ngFor="let recipe of bookmarked_recipes">
+            <div class="card" style="width: 19rem; margin: 10px;height: 25rem;">
+                <img src="{{recipe.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4>Name:{{recipe.name}}</h4>
+                    <p class="card-text">Description: {{recipe.description}}</p>
+                </div>
+            </div>
+        </div>
+      
+      
+    </div>
+  </div>
+
+   
+
+
+
+
+
+    
+ 
+
+
+
+
+
+
+<!-- Calling GoogleAuth() Api from AuthService -->
